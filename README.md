@@ -4,10 +4,37 @@ This tool helps organizations manage their compliance with **NIST 800-171** requ
 
 ---
 
-## 📂 **Features**
-- Display all **compliance requirements** with status.
-- Update compliance status (**Compliant**, **Non-Compliant**, **Not Applicable**).
-- Generate a **CSV report** of the compliance status with **evidence**.
+## 📂 **Core Features:**
+1. **Display All Compliance Requirements:**  
+   View all compliance requirements along with their status (**Compliant**, **Non-Compliant**, **Not Evaluated**).
+
+2. **Search Compliance Requirements:**  
+   Search for compliance requirements using **keywords**, **identifiers**, or **control families**.
+
+3. **List Not Evaluated Requirements:**  
+   Identify all compliance **identifiers** that have not been updated from the **"Not Evaluated"** status.
+
+4. **Update Compliance Status:**  
+   Update the status of compliance requirements to:
+   - **Compliant**
+   - **Non-Compliant**
+   - **Not Applicable**  
+   Provide **evidence** while updating the status.
+
+5. **Generate Reports:**  
+   Create compliance reports in:
+   - **CSV format** (`compliance_report.csv`)
+   - **PDF format** (`compliance_report.pdf`)  
+   The report includes **status**, **evidence**, and **detailed requirements**.
+
+6. **Automatic Backups:**  
+   Automatically **backup compliance data** into the **backups** directory with **timestamped filenames**.
+
+7. **Logging:**  
+   All actions are **logged** to **compliance_tool.log**, including:
+   - **Errors**
+   - **Status updates**
+   - **Report generation activities**
 
 ---
 
@@ -32,6 +59,7 @@ sudo apt install python3 python3-pip
 2. **Required Python packages:**
 ```sh
 pip install pandas
+pip install fpdf
 ```
 
 3. **CSV File:** Place the **CSGNIST800171Compliance.csv** file in the **same directory** as the script.
@@ -57,24 +85,23 @@ python nist_compliance_tool.py
 
 ---
 
-## 📊 **How to Use**
-1. **Display All Requirements:**
-   - Choose option **1** to view all **compliance requirements**.
-
-2. **Update Compliance Status:**
-   - Choose option **2**.
-   - Enter the **requirement index**, **status**, and **optional evidence**.
-
-3. **Generate a Compliance Report:**
-   - Choose option **3** to export the **compliance report** as **compliance_report.csv**.
-
-4. **Exit the Tool:**
-   - Choose option **4**.
+## 🛠️ **Tool Usage:**
+- **Menu Options:**
+```plaintext
+1. Display all requirements
+2. Search compliance requirements
+3. List requirements not evaluated
+4. Update compliance status
+5. Generate compliance report (CSV & PDF)
+6. Backup compliance data
+7. Exit
+```
 
 ---
 
-## 📁 **Output**
-- Generates a **CSV report** named **compliance_report.csv** in the **project directory**.
+## 📊 **Report Generation:**
+- **CSV Report:** Provides a **detailed tabular view** of the **compliance status**.
+- **PDF Report:** Presents a **print-friendly version** of the **compliance data**.
 
 ---
 
